@@ -1,8 +1,7 @@
 # Introduction
 
-This project is a website built to gather funds for ***BatMan*** to fight crime by establishing an intermediatery to buy and sell items. ***BatMan*** is fighting crime restlessly and on Feb 27th 2024, I got a news that ***BATMAN*** is running out of funds and is requesting for test coins of both ***BitCoin*** and ***Ethereum***. 
-
-Since then, I am helping him in various ways by sending test bitcoins to his public address ***(LAB-1)***, then realized hemight not know who sent those coins so created an custom address to send from ***(LAB-2)***. Then starting learning about mining blocks and how mining works ***(LAB-3)*** so that today, I can create a website like this to gather coins and send him to help him fight crime ***(Project)***.
+This project is a website built to act as an intermediatery between people such that each individual person can list items in exhcnage for ***Sepolia Ethers***
+or purchase items listed by other with those test coins.
 
 This is how it looks:
 
@@ -116,4 +115,4 @@ Below are some of the output screens:
 
 ### Live website:
 
-Here is the [****Link****](https://main--gotham-marketplace-avinash.netlify.app/) for the live website hosted. Kindly, please visit my website, use it, make purchases and listings, give feedback and Help ***BATMAN*** to continue his fight against the crime.
+Here is the [****Link****](https://main--gotham-marketplace-avinash.netlify.app/) for the live website hosted. Kindly, please visit my website, use it, make purchases and listings, give feedback to help me improve.
