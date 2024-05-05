@@ -41,7 +41,7 @@ node -v
 
 ### Project setup
 
-1) Clone this [***repository***]() into your machine.
+1) Clone this [***repository***](https://github.com/avinash-542/GothamMarketplace) into your machine.
 
 2) Once cloning successfully, open command line into the repo folder.
 
@@ -116,4 +116,4 @@ Below are some of the output screens:
 
 ### Live website:
 
-Here is the [****Link****]() for the live website hosted. Kindly, please visit my website, use it, make purchases and listings, give feedback and Help ***BATMAN*** to continue his fight against the crime.
+Here is the [****Link****](https://main--gotham-marketplace-avinash.netlify.app/) for the live website hosted. Kindly, please visit my website, use it, make purchases and listings, give feedback and Help ***BATMAN*** to continue his fight against the crime.
