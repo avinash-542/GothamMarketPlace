@@ -107,7 +107,7 @@ Below are some of the output screens:
 
     ***Available***: Here, All items available for the user to purchase are displayed. Only available to buy and not listed by user.
 
-    ***Sold***: Here, Items listed by user and are sold are displayed along with buyer address.
+    ***Sold***: Here, Items listed by other users which are sold are displayed along with buyer address.
 
     ***My***: Here, Items purchased by the user are displayed with sold status.
 
