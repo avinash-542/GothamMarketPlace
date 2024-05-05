@@ -77,6 +77,7 @@ const NavBar = ({ onConnect }) => {
         const web3 = new Web3(window.ethereum);
         await window.ethereum.request({ method: 'eth_requestAccounts' });
         const accounts = await web3.eth.getAccounts();
+
         setAccount(accounts[0]);
         setIsConnected(true);
         userAccount = accounts[0];

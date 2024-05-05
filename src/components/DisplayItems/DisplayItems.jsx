@@ -89,6 +89,7 @@ const DisplayItems = () => {
             }
           }
           setItems(itemsArray);
+          console.log("all", itemsArray);
         } catch (error) {
           console.error("Error fetching items:", error);
         }
@@ -101,7 +102,7 @@ const DisplayItems = () => {
   return (
     <div>
       <div className={Style.outercard}>
-        <h1 className={Style.titlecard}>Itemo-Pedia</h1>
+        <h1 className={Style.titlecard}>Itemo-pedia</h1>
       </div>
       <div>
         <table>

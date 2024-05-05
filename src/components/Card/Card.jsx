@@ -97,17 +97,10 @@ const Card = ({ id, item, type }) => {
     <>
     <div key={id} className={Style.card}>
       <h3>{item.title}</h3>
-      {item.imgUrl ? (
-        <img src={item.imgUrl} alt="Uploaded" className={Style.cardimg} />
-      ) : (
-        <img
-          src={image.collection}
-          alt="Placeholder"
-          className={Style.cardimg}
-        />
-      )}
+      <img src={item.imgUrl.toString().toLowerCase().substring(79,88) === 'undefined' ? item.imgUrl.toString().replace('undefined', 'collection.png') : item.imgUrl} alt="item" className={Style.cardimg} />
 
-      {/* <img src={image.collection} alt="item" className={Style.cardimg} onClick={handleImageUpload}/> */}
+      {console.log(item.title, item.imgUrl)}
+
       <p style={{ fontWeight: "bold" }}>Description</p>
       <p>{item.description}</p>
       <p style={{ fontWeight: "bold" }}>
@@ -182,6 +175,7 @@ const Card = ({ id, item, type }) => {
                     border: "2px solid #ccc",
                   }}
                 >
+
                   <tr>
                     <th
                       style={{

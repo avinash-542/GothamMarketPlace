@@ -1,5 +1,6 @@
 .container {
     text-align: center; /* Center the button horizontally */
+    padding-bottom: 50px;
     margin-top: 10px; /* Adjust margin as needed */
   }
 
@@ -10,7 +11,7 @@
 .imageStyle {
     height: 100px; width: 200px; overflow: hidden;
 }
-  
+
   .seeitems {
     margin: 5px;
     margin-top: 20px;

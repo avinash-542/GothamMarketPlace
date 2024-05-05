@@ -37,7 +37,7 @@ const App = () => {
   };
  
   return (
-    <div>
+    <div style={{ marginBottom: '20px'}}>
       <NavBar onConnect={handleConnect} />
       <Router>
       <Routes>

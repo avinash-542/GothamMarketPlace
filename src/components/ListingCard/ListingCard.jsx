@@ -22,6 +22,7 @@ const ListingCard = ({ data, onChange }) => {
   const [buttonVisible, setButtonVisible] = useState(true);
 
   const [imageUrl, setImageUrl] = useState("");
+  const [uploadUrl, setUploadUrl] = useState("");
   const [file, setFile] = useState(image.collection);
 
   const [account, setAccount] = useState("");
@@ -44,12 +45,26 @@ const ListingCard = ({ data, onChange }) => {
     loadAccount();
   }, []);
 
-  const handleImageChange = (e) => {
+  const handleImageChange = async (e) => {
     const selectedFile = e.target.files[0];
+    console.log('selectedFile ::', selectedFile)
     if (!selectedFile) return;
+    const storageRef = ref(imageDB, `images/${selectedFile.name}`);
+          uploadBytes(storageRef, selectedFile).then((snapshot) => {
+            console.log('SnapShot :: ', snapshot);
+            
+              const url =  getDownloadURL(ref(imageDB, `images/${selectedFile.name}`)).then((url) => {
+                setUploadUrl(url);
+                console.log('URL :: inside gdu :: ', url);
+              });
+              //console.log('URL :: ', url[0][0]);
+              setUploadUrl(url);
+          
+          }); 
 
     setFile(selectedFile);
-
+    //console.log('file', file)
+    console.log('selectedFile', selectedFile)
     const objectUrl = URL.createObjectURL(selectedFile);
     setImageUrl(objectUrl);
 
@@ -96,19 +111,22 @@ const ListingCard = ({ data, onChange }) => {
       try {
         // Example: Call a view function
         const priceInWei = web3.utils.toWei(price.toString(), "ether");
-
+        console.log("File from upload : ",file)
         if (file) {
-          const storageRef = ref(imageDB, `images/${file.name}`);
-          uploadBytes(storageRef, file).then((snapshot) => {
+          // const storageRef = ref(imageDB, `images/${file.name}`);
+          // uploadBytes(storageRef, file).then((snapshot) => {
 
-          });
-          const url = await getDownloadURL(ref(imageDB, `images/${file.name}`));
-
-          if (url) {
+          // });
+          //const url = await getDownloadURL(ref(imageDB, `images/${file.name}`));
+          console.log('upload url here : ', uploadUrl)
+          if (uploadUrl) {
             setButtonVisible(false);
             const res = await contract.methods
-              .listItem(title, desc, priceInWei, url)
+              .listItem(title, desc, priceInWei, uploadUrl)
               .send({ from: addr });
+              console.log('res ::', res)
+              console.log('res url ::', res.events.ItemListed.returnValues.imageUri)
+              console.log('upload url ::', uploadUrl)
             if (res) {
               data = {
                 transactionHash: res.transactionHash.toString(),
