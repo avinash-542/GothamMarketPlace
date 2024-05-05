@@ -1,0 +1,47 @@
+/* styles.css */
+.carousel {
+    display: flex;
+    overflow-x: scroll;
+    scroll-behavior: smooth; /* Enable smooth scrolling */
+    width: 100%;
+    height: auto; /* Adjust height as needed */
+  }
+
+.carousel::-webkit-scrollbar {
+    display: none; /* Hide the scrollbar */
+}
+
+.carousel_container {
+  margin-top: 20px;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.card {
+  text-align: center;
+  flex: 0 0 auto;
+  width: 350px; /* Adjust card width as needed */
+  height: 450px; /* Adjust card height as needed */
+  margin-right:10px;
+  margin-left: 10px; /* Adjust card margin as needed */
+  background-color: #dad9d9;
+  border-radius: 25px;
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.cardimg {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.cardimg_carousel {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+

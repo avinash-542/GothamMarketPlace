@@ -1,0 +1,62 @@
+.popoverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.progressbarcontainer {
+    width: 500px;
+    height: 100px;
+    position: relative;
+  }
+  
+  .progressbar {
+    width: 70%;
+    height: 70%;
+    border-radius: 20%;
+    position: relative;
+    /* background-color: #f9faff; */
+    /* clip: rect(0, 100px, 100px, 50px); */
+  }
+  
+  .progressbarfill {
+    width: 50%;
+    height: 50%;
+    border-radius: 50%;
+    color: #ffb700;
+    /* position: absolute; */
+    /* clip: rect(0, 50px, 100px, 0); */
+    background-color: #ffb700;
+    animation: progress-animation 0.7s infinite;
+  }
+  
+  /* @keyframes progress-animation {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(180deg);
+    }
+  } */
+  
+
+  @keyframes progress-animation {
+    0% {
+      transform: translateX(0);
+    }
+    50% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+
+  

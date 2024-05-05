@@ -1,0 +1,78 @@
+.outercard {
+  overflow-y: hidden;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: none;
+    border-radius: 8px;
+    padding: 16px;
+    margin: 16px;
+  }
+
+/* .container {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(200px, 1fr));
+    gap: 50px;
+    overflow-y: hidden;
+
+  } */
+
+  .container {
+    padding: 50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 2fr)); /* Automatically adjust columns based on container width */
+    gap: 50px;
+    overflow-y: hidden;
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 2fr)); /* Adjust columns for smaller screens */
+    }
+}
+
+  .container::-webkit-scrollbar {
+    display: none;
+  }
+
+
+.titlecard {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    background-color: #b4f8f8;
+    border: none;
+    border-radius: 8px;
+    padding: 16px;
+    margin: 16px;
+
+  }
+
+.card {
+    padding: 20px;
+    border: 1px solid #ccc;
+    text-align: center;
+  }
+
+
+  table {
+    margin: 20px auto;
+    border-radius: 10px;
+    background-color: #f8f8f8;
+    border-collapse: collapse;
+  }
+  
+  thead th {
+    margin: 5px;
+
+    border-radius: 10px;
+    padding: 20px;
+    cursor: pointer;
+  }
+  
+  th.active {
+    background-color: #a3f0ed;
+  }
+  

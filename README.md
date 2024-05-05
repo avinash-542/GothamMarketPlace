@@ -1,70 +1,119 @@
-# Getting Started with Create React App
+# Introduction
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a website built to gather funds for ***BatMan*** to fight crime by establishing an intermediatery to buy and sell items. ***BatMan*** is fighting crime restlessly and on Feb 27th 2024, I got a news that ***BATMAN*** is running out of funds and is requesting for test coins of both ***BitCoin*** and ***Ethereum***. 
 
-## Available Scripts
+Since then, I am helping him in various ways by sending test bitcoins to his public address ***(LAB-1)***, then realized hemight not know who sent those coins so created an custom address to send from ***(LAB-2)***. Then starting learning about mining blocks and how mining works ***(LAB-3)*** so that today, I can create a website like this to gather coins and send him to help him fight crime ***(Project)***.
 
-In the project directory, you can run:
+This is how it looks:
 
-### `npm start`
+![Homescreen](src/img/homescreen.png)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+The result of my learning is the ***"Gotham MarketPlace"***. This is a market place where people can buy or sell items at some price.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+# SetUp
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+To start working with this project, we need to have an initial setup of ***MetaMask*** wallet, ***Node.js*** and project.
 
-### `npm run build`
+### Wallet Setup:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1) Install [***MetaMask***](https://metamask.io/) extension to the browser you wish to use.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+2) Create a wallet in the extension, go through all the steps and safe gaurd the security phrases.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+3) Now, search for any faucets which provide ***Sepolia*** test coins and add few to your wallet.
 
-### `npm run eject`
+Your wallet setup is completed.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Node JS
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1) Install [***Node JS***](https://nodejs.org/en) and go through the setup wizard.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+2) Once completed with setup wizard, open terminal/Command line and run following command to check ***Node JS*** presence.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
+``` sh
+node -v
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+3) If this gives you a version, then ***Node JS*** is installed successfully.
 
-### Code Splitting
+### Project setup
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+1) Clone this [***repository***]() into your machine.
 
-### Analyzing the Bundle Size
+2) Once cloning successfully, open command line into the repo folder.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+3) run the below commands one-by-one to setup dependencies of project.
 
-### Making a Progressive Web App
+```code
+npm init
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+npm install @openzeppelin/contracts
 
-### Advanced Configuration
+npm install react-router-dom
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+npm install web3
+```
 
-### Deployment
+4) Then go to [***Firebase***](https://console.firebase.google.com/) and create a project, go through the steps mentioned while creating a project their.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+5) Setup ***Firebase Storage*** as we will use this to store media files from our web app.
 
-### `npm run build` fails to minify
+6) In Command line, run the following commands to initialize the firebase:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```code
+npm install firebase
+
+firebase login
+
+firebase init
+```
+
+7) This is a React JS project, so remember to choose option based on this.
+
+Mow the project setup is also complete.
+
+# Testing
+
+To test the installed project, run ```npm start``` command from the location inside project folder in command line. This will start the project locally. With this we can test the project, make changes to the project and then finally can deploy if we want.
+
+If we wanted to change the features related to transations, we need to write a new [***Solidity***](https://soliditylang.org/) smart contract, compile it in [***Remix IDE***](https://remix.ethereum.org/) to get ABI data (JSON) and then deploy it to get contract address which need to be replaced or placed in filed where we want to interact with the contract and call functions there.
+
+# Outputs
+
+Below are some of the output screens:
+
+### Home screen:
+![Home screen](src/img/Homescreen.png)
+
+### Listing Screen:
+![Listing Screen](src/img/listing.png)
+
+### Display Screen:
+![Display Screen](src/img/display.png)
+
+# Features
+
+1) In this project, we can list an item including image and when listed successfully, a pop up appears to show transaction details.
+
+2) When these details are shown, there will also be a hyperlink which opens in a new window and shows block data from [***Etherscans***](https://sepolia.etherscan.io).
+
+3) The same is with the purchasing function, a popup appears as the purchase completes and give block details.
+
+4) In display scree, we have a total of 5 tabs named All, Available, Sold, My and Listed.
+
+    ***All***: Here all the items listed by every user can be seen and differentiated based on category and can be seen at the bottom of item card.
+
+    ***Available***: Here, All items available for the user to purchase are displayed. Only available to buy and not listed by user.
+
+    ***Sold***: Here, Items listed by user and are sold are displayed along with buyer address.
+
+    ***My***: Here, Items purchased by the user are displayed with sold status.
+
+    ***Listed***: Here, the items listed by the user are shown with sold or available status.
+
+### Live website:
+
+Here is the [****Link****]() for the live website hosted. Kindly, please visit my website, use it, make purchases and listings, give feedback and Help ***BATMAN*** to continue his fight against the crime.
