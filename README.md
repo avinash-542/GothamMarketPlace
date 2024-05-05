@@ -6,7 +6,7 @@ Since then, I am helping him in various ways by sending test bitcoins to his pub
 
 This is how it looks:
 
-![Homescreen](src/img/homescreen.png)
+![Homescreen](src/img/Homescreen.png)
 
 The result of my learning is the ***"Gotham MarketPlace"***. This is a market place where people can buy or sell items at some price.
 
