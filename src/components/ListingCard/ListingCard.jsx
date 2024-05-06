@@ -8,6 +8,7 @@ import { imageDB } from "../../firebase";
 import { set } from "firebase/database";
 import { FaLink } from "react-icons/fa";
 import Progress from "../Progress/Progress";
+import { FaUpload } from "react-icons/fa6";
 
 const contractAddress = "0xE80Ccb3d70804555a22e60fEaEC8a3aF7568e6a6"; //Working
 
@@ -23,7 +24,7 @@ const ListingCard = ({ data, onChange }) => {
 
   const [imageUrl, setImageUrl] = useState("");
   const [uploadUrl, setUploadUrl] = useState("");
-  const [file, setFile] = useState(image.collection);
+  const [file, setFile] = useState(null);
 
   const [account, setAccount] = useState("");
 
@@ -107,6 +108,25 @@ const ListingCard = ({ data, onChange }) => {
 
   async function handleButtonClick({ title, desc, addr, price }) {
     setShowProgress(true);
+    if(title === "" || desc === "" || price === "") {
+      alert("Please fill all the fields");
+      setShowProgress(false);
+    }
+    if(addr === "") {
+      alert("Please connect your wallet and refresh page");
+
+      setShowProgress(false);
+    }
+    if ((title && desc && addr && file) && price <= 0) {
+      alert("Price should be greater than 0");
+      setShowProgress(false);
+      return;
+    }
+    if (!file) {
+      alert("Please upload an image");
+      console.log('file ::', file);
+      setShowProgress(false);
+    }
     if (web3 && contract) {
       try {
         // Example: Call a view function
@@ -164,18 +184,20 @@ const ListingCard = ({ data, onChange }) => {
                 src={imageUrl || image.batLogo}
                 alt="Default"
                 className={Style.imageStyle}
-                style={{ width: "200px", height: "200px", cursor: "pointer" }}
-                onClick={handleDefaultImageClick}
+                style={{ width: "200px", height: "200px", cursor: "pointer"  }}
+                
               />
+              
               <input
                 id="fileInput"
                 type="file"
                 accept="image/*"
                 style={{ display: "none" }}
                 onChange={handleImageChange}
-              />
+              /> 
             </div>
-            <p style={{ textAlign: "center" }}>Click above to upload image</p>
+            {/* <p style={{ textAlign: "center" }}>Click above to upload image</p> */}
+            <button onClick={handleDefaultImageClick} className={Style.upload}><FaUpload/> Upload </button>
           </div>
           <div className={Style.form}>
             <div className={Style.form1}>
@@ -212,11 +234,11 @@ const ListingCard = ({ data, onChange }) => {
                 }
                 className={Style.list_button}
               >
-                Upload
+                List Item
               </button>
             ) : (
               <button className={Style.progressing_button} disabled>
-                Uploading...
+                Listing...
               </button>
             )}
           </div>
